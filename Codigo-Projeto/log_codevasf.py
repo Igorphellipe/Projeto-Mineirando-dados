@@ -9,7 +9,8 @@ dados_separados = []
 dados_finais = []
 dados_alterados = []
 codevasf = []
-
+dados_caps = []
+dados_lock = []
 #definindo uma função para abrir o arquivo
 def ler_arquivo_txt(caminho_arquivo):
     #Comanando para abertura do arquivo para leitura dos dadso
@@ -24,11 +25,19 @@ def ler_arquivo_txt(caminho_arquivo):
         # Laço for para enviar os dados para uma lista nova para um novo tratamento dos dados
         for val in dados:
             dados_atualizados.append(val)
+        
+        for i in dados_atualizados:
+            valor = i.replace('est', 'EST')
+            dados_caps.append(valor)
+        
+        for i in dados_caps:
+            valor = i.replace('Est', 'EST')
+            dados_lock.append(valor)
 
 #Funçao criada para ordenar os dados e remover dados duplicados com o comando set na lista 'dados_atualizado'
 def ordena_dados():
     ler_arquivo_txt('debug.log')
-    meu_set = set(dados_atualizados)
+    meu_set = set(dados_lock)
     usuarios = len(meu_set)
 
     for valores in meu_set:
@@ -44,6 +53,7 @@ def ordena_dados():
 #Separando e removendo caracteres especiais conforme solicitado finalizando toda busca e separação dos dados 
 def dados_compilados():
     ordena_dados()
+
 
     for i in codevasf:
         valor = i.replace('@', ' ')

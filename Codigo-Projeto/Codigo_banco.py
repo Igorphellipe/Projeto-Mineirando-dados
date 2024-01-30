@@ -6,7 +6,7 @@
 import sqlite3
 
 #Criando banco de dados
-conexao = sqlite3.connect('Log-codevasf-.db')
+conexao = sqlite3.connect('Log-codevasf-novo.db')
 
 #cria um curosr para executar comandos sql
 cursor = conexao.cursor()

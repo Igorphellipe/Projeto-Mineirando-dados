@@ -15,7 +15,7 @@ produto_fin = []
 
 
 #Criando conexão com o banco de dados
-conexao = sqlite3.connect('log-codevasf-.db')
+conexao = sqlite3.connect('log-codevasf-novo.db')
 
 # Cria variavel cursor para executar comando SQL
 cursor = conexao.cursor()
